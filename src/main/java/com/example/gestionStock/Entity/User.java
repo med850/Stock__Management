@@ -1,0 +1,32 @@
+package com.example.gestionStock.Entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=true)
+@Entity
+@Table(name="user")
+public class User extends AbstractEntity {
+
+	
+	
+	private String nom;
+}
+
+
+
+
+
+
+
+
+
+

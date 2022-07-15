@@ -3,6 +3,7 @@ package com.example.gestionStock.Dto;
 import java.util.List;
 
 import com.example.gestionStock.Entity.Categorie;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Data;
@@ -15,23 +16,51 @@ public class CategorieDto {
 	private Integer id;
 
 	
-	private String codeCat;
+	private String code;
 	
 	private String designation;
 
-	
+	@JsonIgnore
 	private List<ArticleDto>articles;
 	
 	
-	/*public CategorieDto fromEntity(Categorie categorie) {
+	public CategorieDto fromEntity(Categorie categorie) {
 		
 		if(categorie == null) {
 			return null;
-		}else {
-			return CategorieDto.builder().code(categorie.getCode())
-					
+		}
+				//return null;	
+		return CategorieDto.builder()
+				.id(categorie.getId())
+				.code(categorie.getCode())
+				.designation(categorie.getDesignation())
+				.build();
+		
+	}
+	
+	
+	
+	
+	public Categorie toEntity(CategorieDto categorieDto) {
+		
+		if(categorieDto == null) {
+			return null;
 		}
 		
-	}*/
+		Categorie categorie = new Categorie();
+		
+		categorie.setId(categorieDto.getId());
+		categorie.setCode(categorieDto.getCode());
+		categorie.setDesignation(categorieDto.getDesignation());
+		
+		return categorie;
+		
+		
+		
+	}
+	
+	
+	
+	
 	
 }

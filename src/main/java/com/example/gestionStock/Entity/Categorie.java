@@ -27,7 +27,7 @@ public class Categorie extends AbstractEntity{
 	
 	
 	@Column(name="codecategorie")
-	private String codeCat;
+	private String code;
 	
 	@Column(name="designation")
 	private String designation;

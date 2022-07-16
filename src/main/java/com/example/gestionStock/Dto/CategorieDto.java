@@ -24,7 +24,7 @@ public class CategorieDto {
 	private List<ArticleDto>articles;
 	
 	
-	public CategorieDto fromEntity(Categorie categorie) {
+	public static CategorieDto fromEntity(Categorie categorie) {
 		
 		if(categorie == null) {
 			return null;

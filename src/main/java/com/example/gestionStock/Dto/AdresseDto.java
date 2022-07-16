@@ -22,7 +22,7 @@ public class AdresseDto {
 
 
 
-	public AdresseDto fromEntity(Adresse adresse) {
+	public static AdresseDto fromEntity(Adresse adresse) {
 		
 		if(adresse == null) {
 			return null;

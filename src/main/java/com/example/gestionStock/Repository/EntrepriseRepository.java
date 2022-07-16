@@ -1,5 +1,9 @@
 package com.example.gestionStock.Repository;
 
-public interface EntrepriseRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.gestionStock.Entity.Entreprise;
+
+public interface EntrepriseRepository extends JpaRepository<Integer, Entreprise>{
 
 }

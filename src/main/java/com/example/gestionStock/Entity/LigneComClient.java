@@ -38,6 +38,9 @@ public class LigneComClient extends AbstractEntity{
 	@Column(name = "quantite")
 	private BigDecimal quantite;
 	
+	@Column(name="idEntreprise")
+	private Integer idEntreprise;
+	
 	
 	@Column(name ="prixunitaire")
 	private BigDecimal prixUnitaire;

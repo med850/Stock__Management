@@ -39,7 +39,7 @@ public class AdresseDto {
 	}
 	
 	
-	public Adresse toEntity(AdresseDto adresseDto) {
+	public static Adresse toEntity(AdresseDto adresseDto) {
 		
 		if(adresseDto == null) {
 			return null;

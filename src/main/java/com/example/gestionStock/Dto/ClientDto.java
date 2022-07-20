@@ -35,20 +35,62 @@ public class ClientDto {
 	
 	private String tel;
 	
+	private Integer idEntreprise;
+	
 	
 	@JsonIgnore
 	private List<CommandeClientDto>comdClient;
 	
 	
-/*	public Client toEntity(ClientDto clientDto) {
+	public static ClientDto fromEntity(Client client) {
 		
-		if(clientDto == null) {
+		if(client == null) {
 			return null;
 		}
 		
+		return ClientDto.builder()
+				.id(client.getId())
+				.nom(client.getNom())
+				.prenom(client.getPrenom())
+				.adresse(AdresseDto.fromEntity(client.getAdresse()))
+				.photo(client.getPhoto())
+				.email(client.getEmail())
+				.tel(client.getTel())
+				.idEntreprise(client.getIdEntreprise())
+				.build();
+				
 		
 		
 		
-	}*/
+		
+	}
+	
+	
+	
+	public static Client toEntity(ClientDto clientDto) {
+		
+			if(clientDto == null) {
+				
+				return null;
+				
+			}
+			
+			Client client = new Client();
+		
+			client.setId(clientDto.getId());
+			client.setNom(clientDto.getNom());
+			client.setPrenom(clientDto.getPrenom());
+			client.setAdresse(AdresseDto.toEntity(clientDto.getAdresse()));
+			client.setPhoto(clientDto.getPhoto());
+			client.setEmail(clientDto.getEmail());
+			client.setTel(clientDto.getTel());
+			client.setIdEntreprise(clientDto.getIdEntreprise());
+			
+			return client;
+		
+	}
+	
+	
+	
 	
 }

@@ -18,6 +18,9 @@ public class RolesDto {
 	private UserDto user;
 	
 	
+	private Integer idEntreprise;
+	
+	
 	public static RolesDto fromEntity(Roles roles) {
 		
 		
@@ -29,10 +32,31 @@ public class RolesDto {
 				.id(roles.getId())
 				.roleName(roles.getRoleName())
 				.user(UserDto.fromEntity(roles.getUser()))
+				.idEntreprise(roles.getIdEntreprise())
 				.build();
 				
 		
 	}
 	
+	
+	
+	
+	public static Roles toEntity(RolesDto roleDto) {
+		
+		
+		if(roleDto == null) {
+			
+			return null;
+		}
+		
+		Roles role = new Roles();
+		
+		role.setId(roleDto.getId());
+		role.setRoleName(roleDto.getRoleName());
+		role.setUser(UserDto.toEntity(roleDto.getUser()));
+		role.setIdEntreprise(roleDto.getIdEntreprise());
+		
+		return role;
+	}
 	
 }

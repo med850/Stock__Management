@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.example.gestionStock.Entity.Entreprise;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Data;
@@ -37,6 +38,9 @@ public class EntrepriseDto {
 	private String siteWeb;
 	
 	
+	private Integer idEntreprise;
+	
+	@JsonIgnore
 	private List<UserDto>users;
 	
 	
@@ -67,5 +71,25 @@ public class EntrepriseDto {
 	
 	
 	
-	
+	public static Entreprise toEntity(EntrepriseDto entrepriseDto) {
+		
+		if(entrepriseDto == null) {
+			
+			return null;
+		}
+		
+		Entreprise entreprise = new Entreprise();
+		
+		entreprise.setId(entrepriseDto.getId());
+		entreprise.setNom(entrepriseDto.getNom());
+		entreprise.setDescription(entrepriseDto.getDescription());
+		entreprise.setCodeFiscal(entrepriseDto.getCodeFiscal());
+		entreprise.setPhoto(entrepriseDto.getPhoto());
+		entreprise.setEmail(entrepriseDto.getEmail());
+		entreprise.setTel(entrepriseDto.getTel());
+		entreprise.setSiteWeb(entrepriseDto.getSiteWeb());
+		
+		return entreprise;
+		
+	}
 }

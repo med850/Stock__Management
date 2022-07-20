@@ -1,9 +1,11 @@
 package com.example.gestionStock.Entity;
 
 import java.time.Instant;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -33,6 +35,10 @@ public class Ventes extends AbstractEntity {
 	
 	@Column(name="commentaire")
 	private String commentaire;
+	
+	
+	@OneToMany(mappedBy="vente")
+	private List<LigneVente>ligneVente;
 
 }
 

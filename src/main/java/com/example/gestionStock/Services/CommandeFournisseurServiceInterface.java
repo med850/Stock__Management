@@ -12,7 +12,7 @@ public interface CommandeFournisseurServiceInterface {
 	
 	CommandeFournisseurDto findById(Integer id);
 	
-	CommandeFournisseurDto findByCode(String code);
+	CommandeFournisseurDto findByCode(String codes);
 	
 	List<CommandeFournisseurDto> findAll();
 	

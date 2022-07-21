@@ -10,6 +10,6 @@ public interface CommandeClientRepository extends JpaRepository<CommandeClient, 
 
 	
 	
-	Optional<CommandeClient>findCommandeClientByCodes(String code);
+	Optional<CommandeClient>findCommandeClientByCode(String code);
 	
 }

@@ -150,19 +150,19 @@ private CommandeFournisseurRepository commandeFournisseurRepository;
 	}
 
 	@Override
-	public CommandeFournisseurDto findByCode(String code) {
+	public CommandeFournisseurDto findByCode(String codes) {
 		
-		if(!StringUtils.hasLength(code)) {
+		if(!StringUtils.hasLength(codes)) {
 			
 			log.error("Code de commande de fournisseur est null");
 			return null;
 		}
 		
 		
-		return commandeFournisseurRepository.findCommandeFournisseurByCodes(code)
+		return commandeFournisseurRepository.findCommandeFournisseurByCodes(codes)
 				.map(CommandeFournisseurDto::fromEntity)
 				.orElseThrow(()->new EntityNotFoundException(
-						"Acune commande fournisseur n'a été trouvé avec le code " + code, ErrorCodes.COMMANDE_FOURNISSEUR_NOT_FOUND));
+						"Acune commande fournisseur n'a été trouvé avec le code " + codes, ErrorCodes.COMMANDE_FOURNISSEUR_NOT_FOUND));
 	}
 
 	

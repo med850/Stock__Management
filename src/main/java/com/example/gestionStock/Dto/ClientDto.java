@@ -35,7 +35,7 @@ public class ClientDto {
 	
 	private String tel;
 	
-	private Integer idEntreprise;
+	//private Integer idEntreprise;
 	
 	
 	@JsonIgnore
@@ -56,7 +56,6 @@ public class ClientDto {
 				.photo(client.getPhoto())
 				.email(client.getEmail())
 				.tel(client.getTel())
-				.idEntreprise(client.getIdEntreprise())
 				.build();
 				
 		
@@ -84,7 +83,6 @@ public class ClientDto {
 			client.setPhoto(clientDto.getPhoto());
 			client.setEmail(clientDto.getEmail());
 			client.setTel(clientDto.getTel());
-			client.setIdEntreprise(clientDto.getIdEntreprise());
 			
 			return client;
 		

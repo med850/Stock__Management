@@ -72,7 +72,7 @@ public class CommandeClientServiceImp implements CommandeClientServiceInterface{
 		
 		Optional<Client>client = clientRepository.findById(commandeClientDto.getClient().getId());
 		
-		if(!client.isPresent()) {
+		if(!client.isEmpty()) {
 			
 			log.warn("Client n'existe pas", commandeClientDto.getClient().getId());
 			
@@ -135,6 +135,7 @@ public class CommandeClientServiceImp implements CommandeClientServiceInterface{
 	@Override
 	public CommandeClientDto findById(Integer id) {
 		if(id == null) {
+			log.error("L'id de commadnde client est null");
 			return null;
 		}
 		return commandeClientRepository.findById(id)
@@ -153,7 +154,7 @@ public class CommandeClientServiceImp implements CommandeClientServiceInterface{
 		}
 		
 		
-		return commandeClientRepository.findCommandeClientByCodes(code)
+		return commandeClientRepository.findCommandeClientByCode(code)
 				.map(CommandeClientDto::fromEntity)
 				.orElseThrow(()->new EntityNotFoundException(
 						"Acune commande client n'a été trouvé avec le code " + code, ErrorCodes.COMMANDE_CLIENT_NOT_FOUND));

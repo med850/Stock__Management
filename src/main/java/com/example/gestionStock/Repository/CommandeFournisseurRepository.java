@@ -11,7 +11,7 @@ public interface CommandeFournisseurRepository extends JpaRepository<CommandeFou
 
 	
 	
-	Optional<CommandeFournisseur>findCommandeFournisseurByCodes(String code);
+	Optional<CommandeFournisseur>findCommandeFournisseurByCodes(String codes);
 
 	
 }

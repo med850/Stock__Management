@@ -28,7 +28,7 @@ public class LigneComClientDto {
 	private BigDecimal prixUnitaire;
 	
 	
-	private Integer idEntreprise;
+	//private Integer idEntreprise;
 
 
 	
@@ -45,7 +45,6 @@ public class LigneComClientDto {
 				//.commandeClient(CommandeClientDto.fromEntity(lignCommClient.getCommandeClient()))
 				.quantite(lignCommClient.getQuantite())
 				.prixUnitaire(lignCommClient.getPrixUnitaire())
-				.idEntreprise(lignCommClient.getIdEntreprise())
 				.build();
 	}
 	
@@ -66,7 +65,6 @@ public class LigneComClientDto {
 		//lignCommClient.setCommandeClient(CommandeClientDto.toEntity(lignCommClientDto.getCommandeClient()));
 		lignCommClient.setQuantite(lignCommClientDto.getQuantite());
 		lignCommClient.setPrixUnitaire(lignCommClientDto.getPrixUnitaire());
-		lignCommClient.setIdEntreprise(lignCommClientDto.getIdEntreprise());
 		
 		return lignCommClient;
 		

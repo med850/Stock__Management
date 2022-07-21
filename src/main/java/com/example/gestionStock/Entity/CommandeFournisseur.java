@@ -26,8 +26,8 @@ import lombok.NoArgsConstructor;
 public class CommandeFournisseur extends AbstractEntity {
 	
 	
-	@Column(name="code")
-	private String code;
+	@Column(name="codes")
+	private String codes;
 	
 	@Column(name="datecommande")
 	private Instant dateCommande;

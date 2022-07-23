@@ -1,8 +1,10 @@
 package com.example.gestionStock.Utils;
 
+import org.springframework.context.annotation.ComponentScan;
+
 public interface Constants {
 
 	
-	public static String APP_ROOT = "gestionStock/v1";
+ String APP_ROOT = "gestionStock/v1";
 	
 }

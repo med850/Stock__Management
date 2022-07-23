@@ -1,6 +1,9 @@
 package com.example.gestionStock.Exception;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import lombok.Getter;
+
 
 public class EntityNotFoundException extends RuntimeException {
 

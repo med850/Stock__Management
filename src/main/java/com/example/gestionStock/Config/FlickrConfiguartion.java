@@ -6,12 +6,15 @@ import java.util.concurrent.ExecutionException;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.flickr4java.flickr.Flickr;
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.REST;
+import com.flickr4java.flickr.RequestContext;
 import com.flickr4java.flickr.auth.Auth;
+import com.flickr4java.flickr.auth.Permission;
 import com.github.scribejava.apis.FlickrApi;
 import com.github.scribejava.apis.FlickrApi.FlickrPerm;
 import com.github.scribejava.core.builder.ServiceBuilder;
@@ -19,7 +22,7 @@ import com.github.scribejava.core.model.OAuth1AccessToken;
 import com.github.scribejava.core.model.OAuth1RequestToken;
 import com.github.scribejava.core.oauth.OAuth10aService;
 
-// @Configuration
+@Configuration
 public class FlickrConfiguartion {
 
 	
@@ -33,10 +36,20 @@ public class FlickrConfiguartion {
 	
 	
 	
-	@Bean
-	public Flickr getFlickr() throws IOException, InterruptedException, ExecutionException, FlickrException {
+
+	@Value("${flickr.appKey}")
+	private String appKey;
+	
+	
+	@Value("${flickr.appSecret}")
+	private String appSecret;
+	
+	
+ /**
+  * @Bean
+  * public Flickr getFlickr() throws IOException, InterruptedException, ExecutionException, FlickrException {
 		
-		Flickr flickr = new Flickr(apiKey, apiSecret, new REST());
+  *Flickr flickr = new Flickr(apiKey, apiSecret, new REST());
 		
 		
 		OAuth10aService service = new ServiceBuilder(apiKey)
@@ -71,6 +84,31 @@ public class FlickrConfiguartion {
 		
 		return flickr;
 		
+	}*/
+	
+	
+	
+	
+	@Bean
+	public Flickr getFlickr() {
+	Flickr flickr = new Flickr(apiKey, apiSecret, new REST());
+
+	
+	Auth auth = new Auth();
+	
+	auth.setPermission(Permission.DELETE);
+	
+	auth.setToken(apiKey);
+	auth.setTokenSecret(apiSecret);
+	
+	RequestContext requestContext = RequestContext.getRequestContext();
+	
+	requestContext.setAuth(auth);
+
+	flickr.setAuth(auth);
+	
+	return flickr;
+	
 	}
 	
 }

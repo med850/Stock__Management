@@ -2,7 +2,11 @@ package com.example.gestionStock.Exception;
 
 import java.util.List;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import lombok.Getter;
+
+
 
 public class InvalidEntityException extends RuntimeException {
 

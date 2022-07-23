@@ -2,8 +2,9 @@ package com.example.gestionStock.Services;
 
 import java.util.List;
 
-import com.example.gestionStock.Dto.VentesDto;
+import org.springframework.context.annotation.ComponentScan;
 
+import com.example.gestionStock.Dto.VentesDto;
 
 public interface VenteServiceInterface {
 

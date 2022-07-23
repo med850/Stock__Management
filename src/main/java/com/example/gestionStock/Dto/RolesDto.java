@@ -1,9 +1,13 @@
 package com.example.gestionStock.Dto;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.example.gestionStock.Entity.Roles;
 
 import lombok.Builder;
 import lombok.Data;
+
+
 
 @Data
 @Builder

@@ -2,12 +2,13 @@ package com.example.gestionStock.Dto;
 
 import java.util.List;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.example.gestionStock.Entity.Categorie;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Data;
-
 
 @Data
 @Builder

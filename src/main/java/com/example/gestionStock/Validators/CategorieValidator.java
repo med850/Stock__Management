@@ -3,9 +3,11 @@ package com.example.gestionStock.Validators;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.util.StringUtils;
 
 import com.example.gestionStock.Dto.CategorieDto;
+
 
 public class CategorieValidator {
 

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -16,7 +17,6 @@ import com.example.gestionStock.Services.CategorieServiceInterface;
 import com.example.gestionStock.Validators.CategorieValidator;
 
 import lombok.extern.slf4j.Slf4j;
-
 
 
 

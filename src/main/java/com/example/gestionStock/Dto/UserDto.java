@@ -4,11 +4,14 @@ import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.example.gestionStock.Entity.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Data;
+
 
 
 @Data

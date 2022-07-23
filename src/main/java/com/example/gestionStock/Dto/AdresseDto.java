@@ -1,5 +1,7 @@
 package com.example.gestionStock.Dto;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.example.gestionStock.Entity.Adresse;
 
 import lombok.Builder;

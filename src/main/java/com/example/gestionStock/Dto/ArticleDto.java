@@ -2,12 +2,13 @@ package com.example.gestionStock.Dto;
 
 import java.math.BigDecimal;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.example.gestionStock.Entity.Article;
 import com.example.gestionStock.Entity.Categorie;
 
 import lombok.Builder;
 import lombok.Data;
-
 
 @Builder
 @Data

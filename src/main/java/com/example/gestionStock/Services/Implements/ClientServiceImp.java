@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import com.example.gestionStock.Dto.ClientDto;
@@ -18,6 +19,7 @@ import com.example.gestionStock.Validators.ClientValidator;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @Service
 @Slf4j
 public class ClientServiceImp implements ClientServiceInterface{
@@ -30,7 +32,6 @@ public class ClientServiceImp implements ClientServiceInterface{
 
 	@Autowired
 	public ClientServiceImp(ClientRepository clientRepository) {
-		super();
 		this.clientRepository = clientRepository;
 	}
 

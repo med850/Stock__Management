@@ -3,6 +3,7 @@ package com.example.gestionStock.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.gestionStock.Controller.Api.ArticleApi;

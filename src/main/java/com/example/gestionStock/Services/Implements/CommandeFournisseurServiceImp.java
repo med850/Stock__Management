@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -35,7 +36,6 @@ import com.example.gestionStock.Validators.CommandeClientValidator;
 import com.example.gestionStock.Validators.CommandeFournisseurValidator;
 
 import lombok.extern.slf4j.Slf4j;
-
 
 @Service
 @Slf4j

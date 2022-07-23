@@ -2,7 +2,12 @@ package com.example.gestionStock.Services;
 
 import java.util.List;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.example.gestionStock.Dto.CommandeFournisseurDto;
+
+
+
 
 public interface CommandeFournisseurServiceInterface {
 

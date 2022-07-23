@@ -3,11 +3,14 @@ package com.example.gestionStock.Dto;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.example.gestionStock.Entity.MvtStock;
 import com.example.gestionStock.Entity.TypeMvtStock;
 
 import lombok.Builder;
 import lombok.Data;
+
 
 
 @Data

@@ -8,6 +8,8 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -30,14 +32,26 @@ public class AbstractEntity implements Serializable {
 	
 	
 	@CreatedDate
-	@Column(name="creationDate", nullable=false)
-	@JsonIgnore
+	@Column(name="creationDate", nullable=false, updatable=false)
 	private Instant creationDate;
 	
 	@LastModifiedDate
 	@Column(name="lastModifiedDate")
-	@JsonIgnore
 	private Instant lastUpdateDate;
 	
 
+	
+/*	@PrePersist
+	void prePersist() {
+		
+		creationDate = Instant.now();
+	}
+	
+	@PreUpdate
+	void preUpdate() {
+		
+		lastUpdateDate = Instant.now();
+		
+	}*/
+	
 }

@@ -3,10 +3,13 @@ package com.example.gestionStock.Dto;
 import java.time.Instant;
 import java.util.List;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.example.gestionStock.Entity.Ventes;
 
 import lombok.Builder;
 import lombok.Data;
+
 
 
 @Data

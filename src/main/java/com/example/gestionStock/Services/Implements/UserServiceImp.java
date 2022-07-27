@@ -9,13 +9,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import com.example.gestionStock.Dto.ClientDto;
-import com.example.gestionStock.Dto.UserDto;
+import com.example.gestionStock.Dto.UsersDto;
 import com.example.gestionStock.Entity.Client;
-import com.example.gestionStock.Entity.User;
+import com.example.gestionStock.Entity.Users;
 import com.example.gestionStock.Exception.EntityNotFoundException;
 import com.example.gestionStock.Exception.ErrorCodes;
 import com.example.gestionStock.Exception.InvalidEntityException;
-import com.example.gestionStock.Repository.UserRepository;
+import com.example.gestionStock.Repository.UsersRepository;
 import com.example.gestionStock.Services.UserServiceInterface;
 import com.example.gestionStock.Validators.ClientValidator;
 import com.example.gestionStock.Validators.UserValidator;
@@ -29,17 +29,17 @@ public class UserServiceImp implements UserServiceInterface{
 	
 	
 	
-	UserRepository userRepository;
+	UsersRepository userRepository;
 	
 
 	
 	@Autowired
-	public UserServiceImp(UserRepository userRepository) {
+	public UserServiceImp(UsersRepository userRepository) {
 		this.userRepository = userRepository;
 	}
 
 	@Override
-	public UserDto save(UserDto userDto) {
+	public UsersDto save(UsersDto userDto) {
 	
 		List<String>errors = UserValidator.validate(userDto);
 		
@@ -51,11 +51,11 @@ public class UserServiceImp implements UserServiceInterface{
 
 		}	
 		
-		return UserDto.fromEntity(userRepository.save(UserDto.toEntity(userDto)));
+		return UsersDto.fromEntity(userRepository.save(UsersDto.toEntity(userDto)));
 	}
 
 	@Override
-	public UserDto findById(Integer id) {
+	public UsersDto findById(Integer id) {
 		
 		if(id == null) {
 			
@@ -63,16 +63,16 @@ public class UserServiceImp implements UserServiceInterface{
 			return null;
 		}
 		
-		Optional<User>user = userRepository.findById(id);
-		return Optional.of(UserDto.fromEntity(user.get())).orElseThrow(
+		Optional<Users>user = userRepository.findById(id);
+		return Optional.of(UsersDto.fromEntity(user.get())).orElseThrow(
 				()-> new EntityNotFoundException("L'id" + id + "n'existe pas", ErrorCodes.USER_NOT_FOUND));
 	}
 
 	@Override
-	public List<UserDto> findAll() {
+	public List<UsersDto> findAll() {
 		
 		return userRepository.findAll().stream()
-				.map(UserDto::fromEntity)
+				.map(UsersDto::fromEntity)
 				.collect(Collectors.toList());
 	}
 
@@ -87,6 +87,17 @@ if(id == null) {
 		
 		userRepository.deleteById(id);
 		
+	}
+
+	@Override
+	public UsersDto findByEmail(String email) {
+		
+		return userRepository.findUserByEmail(email)
+				.map(UsersDto::fromEntity)
+				.orElseThrow(
+						()-> new EntityNotFoundException(
+								"Aucun utilisateur avec l'email = " + email + "n'été pas trouvé dans la base de données", ErrorCodes.USER_NOT_FOUND));
+	
 	}
 
 }

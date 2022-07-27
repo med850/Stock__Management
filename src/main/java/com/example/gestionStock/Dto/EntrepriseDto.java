@@ -38,11 +38,13 @@ public class EntrepriseDto {
 	
 	private String siteWeb;
 	
+	//private AdresseDto adresse;
+	
 	
 	private Integer idEntreprise;
 	
 	@JsonIgnore
-	private List<UserDto>users;
+	private List<UsersDto>users;
 	
 	
 	
@@ -64,7 +66,7 @@ public class EntrepriseDto {
 				.siteWeb(entreprise.getSiteWeb())
 				.users(entreprise.getUsers() != null ?
 						entreprise.getUsers().stream()
-						.map(UserDto::fromEntity)
+						.map(UsersDto::fromEntity)
 						.collect(Collectors.toList()) : null
 						).build();
 		

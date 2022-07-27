@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.example.gestionStock.Dto.UserDto;
+import com.example.gestionStock.Dto.UsersDto;
 
 import io.swagger.annotations.Api;
 
@@ -20,13 +20,13 @@ public interface UserApi {
 
 	
 	@PostMapping(value = APP_ROOT + "/users/create")
-	UserDto save(@RequestBody UserDto userDto);
+	UsersDto save(@RequestBody UsersDto userDto);
 	
 	@GetMapping(value = APP_ROOT + "/users/{idUser}")
-	UserDto findById(@PathVariable("idUser") Integer id);
+	UsersDto findById(@PathVariable("idUser") Integer id);
 	
 	@GetMapping(value = APP_ROOT + "/users/all")
-	List<UserDto>findAll();
+	List<UsersDto>findAll();
 	
 	@DeleteMapping(value = APP_ROOT + "/users/delete/{idUser}")
 	void delete(@PathVariable("idUser")Integer id);

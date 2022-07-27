@@ -6,14 +6,14 @@ import java.util.List;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.util.StringUtils;
 
-import com.example.gestionStock.Dto.UserDto;
+import com.example.gestionStock.Dto.UsersDto;
 
 
 
 public class UserValidator {
 
 	
-	public static List<String>validate(UserDto userDto){
+	public static List<String>validate(UsersDto userDto){
 		
 		
 		

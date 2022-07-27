@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.ComponentScan;
 
-import com.example.gestionStock.Dto.UserDto;
+import com.example.gestionStock.Dto.UsersDto;
 
 
 
@@ -14,13 +14,16 @@ public interface UserServiceInterface {
 	
 	
 
-	UserDto save(UserDto userDto);
+	UsersDto save(UsersDto userDto);
 	
 	
-	UserDto findById(Integer id);
+	UsersDto findById(Integer id);
 	
 	
-	List<UserDto>findAll();
+	UsersDto findByEmail(String email);
+	
+	
+	List<UsersDto>findAll();
 	
 	
 	void delete(Integer id);

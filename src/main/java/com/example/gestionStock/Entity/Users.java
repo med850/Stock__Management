@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper=true)
 @Entity
 @Table(name="user")
-public class User extends AbstractEntity {
+public class Users extends AbstractEntity {
 
 	
 	@Column(name = "nom")

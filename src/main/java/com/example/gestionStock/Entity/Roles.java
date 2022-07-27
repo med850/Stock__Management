@@ -30,7 +30,7 @@ public class Roles extends AbstractEntity {
 	
 	@ManyToOne
 	@JoinColumn(name="iduser")
-	private User user;
+	private Users user;
 	
 	
 }

@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.context.annotation.ComponentScan;
 
-import com.example.gestionStock.Entity.User;
+import com.example.gestionStock.Entity.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
@@ -16,7 +16,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class UserDto {
+public class UsersDto {
 
 	private Integer id;
 
@@ -52,13 +52,13 @@ public class UserDto {
 	private List<RolesDto>roles;
 
 	
-	public static UserDto fromEntity(User user) {
+	public static UsersDto fromEntity(Users user) {
 		
 		if(user == null) {
 			return null;
 		}
 		
-		return UserDto.builder()
+		return UsersDto.builder()
 				.id(user.getId())
 				.nom(user.getNom())
 				.prenom(user.getPrenom())
@@ -81,14 +81,14 @@ public class UserDto {
 	
 	
 	
-	public static User toEntity(UserDto userDto) {
+	public static Users toEntity(UsersDto userDto) {
 		
 		if(userDto == null) {
 			
 			return null;
 		}
 		
-		User user = new User();
+		Users user = new Users();
 		
 		user.setId(userDto.getId());
 		user.setNom(userDto.getNom());

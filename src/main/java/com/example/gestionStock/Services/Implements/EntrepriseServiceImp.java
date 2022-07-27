@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.gestionStock.Dto.ClientDto;
 import com.example.gestionStock.Dto.EntrepriseDto;
+import com.example.gestionStock.Dto.UsersDto;
 import com.example.gestionStock.Entity.Client;
 import com.example.gestionStock.Entity.Entreprise;
 import com.example.gestionStock.Exception.EntityNotFoundException;
@@ -52,6 +53,8 @@ public class EntrepriseServiceImp implements EntrepriseServiceInterface{
 			
 			throw new InvalidEntityException("L'entreprise n'est pas valide", ErrorCodes.ENTREPRISE_NOT_VALID, errors);
 		}
+		
+		
 		return entrepriseDto.fromEntity(entrepriseRepository.save(entrepriseDto.toEntity(entrepriseDto)));
 	}
 	
@@ -93,5 +96,25 @@ if(id == null) {
 	entrepriseRepository.deleteById(id);
 		
 	}
+	
+	
+	
+	/*private UsersDto fromEntreprise(EntrepriseDto dto) {
+		
+		return UsersDto.builder()
+				.adresse(dto.getAdresse())
+				.nom
+		
+		
+	}*/
+	
+	
+	private String generateRandomPassword() {
+		
+		return "som3R@nd0mP@$$word";
+	}
+	
+	
+	
 
 }

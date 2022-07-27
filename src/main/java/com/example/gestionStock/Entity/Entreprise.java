@@ -3,6 +3,7 @@ package com.example.gestionStock.Entity;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -50,9 +51,11 @@ public class Entreprise extends AbstractEntity{
 	@Column(name = "siteweb")
 	private String siteWeb;
 	
+
+	
 	
 	@OneToMany(mappedBy = "entreprise")
-	private List<User>users;
+	private List<Users>users;
 	
 	
 	

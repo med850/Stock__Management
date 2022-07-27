@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.gestionStock.Dto.ClientDto;
 import com.example.gestionStock.Dto.FournisseurDto;
@@ -18,6 +19,12 @@ import com.example.gestionStock.Services.FournisseurServiceInterface;
 import com.example.gestionStock.Validators.ClientValidator;
 import com.example.gestionStock.Validators.FournisseurValidator;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+
+@Service
+@Slf4j
 public class FournisseurServiceImp implements FournisseurServiceInterface{
 
 	

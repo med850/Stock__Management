@@ -7,10 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 
 
-@ComponentScan(basePackages= {"com.example.gestionStock.Config"+"com.example.gestionStock.Controller"+"com.example.gestionStock.Controller.Api"
-+"com.example.gestionStock.Dto"+"com.example.gestionStock.Exception"+"com.example.gestionStock.Handlers"+"com.example.gestionStock.Repository"
-+"com.example.gestionStock.Services"+"com.example.gestionStock.Services.Implements"+"com.example.gestionStock.Utils"
-+"com.example.gestionStock.Validators"})
+@ComponentScan("com.example.gestionStock")
 @SpringBootApplication
 @EnableJpaAuditing
 public class GestionStockApplication {

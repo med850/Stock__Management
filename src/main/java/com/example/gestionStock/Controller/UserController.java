@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.gestionStock.Controller.Api.UserApi;
-import com.example.gestionStock.Dto.UserDto;
+import com.example.gestionStock.Dto.UsersDto;
 import com.example.gestionStock.Services.UserServiceInterface;
 
 public class UserController implements UserApi{
@@ -22,19 +22,19 @@ public class UserController implements UserApi{
 	}
 
 	@Override
-	public UserDto save(UserDto userDto) {
+	public UsersDto save(UsersDto userDto) {
 		
 		return userService.save(userDto);
 	}
 
 	@Override
-	public UserDto findById(Integer id) {
+	public UsersDto findById(Integer id) {
 		
 		return userService.findById(id);
 	}
 
 	@Override
-	public List<UserDto> findAll() {
+	public List<UsersDto> findAll() {
 		
 		return userService.findAll();
 	}
